@@ -22,7 +22,7 @@ func! s:vlspa_cmdMenu()
     endfunc
 
 	call popup_menu(['Go to declaration', 'Go to definition', 'Document Diagnostics'], #{
-			\ title: "Pick one!",
+			\ title: "LSP Actions",
             \ callback: 's:selectedCommand',
 			\ filter: 'popup_filter_menu',
 			\ close: 'click',
@@ -31,7 +31,7 @@ func! s:vlspa_cmdMenu()
             \ })
 endfunc
 
-nnoremap <buffer> <silent> <leader>d :call <SID>vlspa_cmdMenu()<cr>
+nnoremap <buffer> <silent> X :call <SID>vlspa_cmdMenu()<cr>
 
 let g:loaded_vlspa = 1
 " vim: ft=vim :
