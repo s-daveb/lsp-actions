@@ -3,11 +3,7 @@ if exists('g:loaded_vlspa') || &cp
   finish
 endif
 
-func! s:lines_count()
-    echom line('$') . ' lines in buffer'
-endfunc
-
-func! s:cmdMenu()
+func! s:vlspa_cmdMenu()
 
      " variation of command-types
     let cmds = [
@@ -35,7 +31,7 @@ func! s:cmdMenu()
             \ })
 endfunc
 
-nnoremap <buffer> <silent> <leader>d :call <SID>cmdMenu()<cr>
+nnoremap <buffer> <silent> <leader>d :call <SID>vlspa_cmdMenu()<cr>
 
 let g:loaded_vlspa = 1
 " vim: ft=vim :
