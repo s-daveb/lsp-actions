@@ -7,10 +7,12 @@ func! s:vlspa_cmdMenu()
 
      " variation of command-types
     let cmds = [
+			\ "LspRename",
 			\ "LspReferences",
             \ "LspDeclaration",
             \ "LspDefinition",
-            \ "LspDocumentDiagnostics"
+            \ "LspDocumentDiagnostics",
+			\ "LspStopServer",
             \ ]
 
     " callback for menu-popup
@@ -22,7 +24,8 @@ func! s:vlspa_cmdMenu()
         exe cmds[a:cmd-1]
     endfunc
 
-	call popup_menu(['Find references', 'Go to declaration', 'Go to definition', 'Run code diagnostics'], #{
+	call popup_menu(['Rename', 'Find references', 'Go to declaration', 'Go to definition',
+			\        'Run code diagnostics', 'Stop diagnostics engine'], #{
 			\ title: "LSP Actions",
             \ callback: 's:selectedCommand',
 			\ filter: 'popup_filter_menu',
@@ -32,7 +35,7 @@ func! s:vlspa_cmdMenu()
             \ })
 endfunc
 
-nnoremap <buffer> <silent> X :call <SID>vlspa_cmdMenu()<cr>
+nnoremap  <F11> :call <SID>vlspa_cmdMenu()<cr>
 
 let g:loaded_vlspa = 1
 " vim: ft=vim :
