@@ -1,1 +1,1 @@
-# vim-lsp-actions
+# lsp-actions
