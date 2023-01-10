@@ -7,6 +7,7 @@ func! s:vlspa_cmdMenu()
 
      " variation of command-types
     let cmds = [
+			\ "LspReferences",
             \ "LspDeclaration",
             \ "LspDefinition",
             \ "LspDocumentDiagnostics"
@@ -21,7 +22,7 @@ func! s:vlspa_cmdMenu()
         exe cmds[a:cmd-1]
     endfunc
 
-	call popup_menu(['Go to declaration', 'Go to definition', 'Document Diagnostics'], #{
+	call popup_menu(['Find references', 'Go to declaration', 'Go to definition', 'Run code diagnostics'], #{
 			\ title: "LSP Actions",
             \ callback: 's:selectedCommand',
 			\ filter: 'popup_filter_menu',
